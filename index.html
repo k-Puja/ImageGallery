@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Image Gallery</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="navbar">
+                <nav>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Gallery</a></li>
+                        <li><a href="">Download</a></li>
+                        <li><a href="">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="text-box">
+                        <h5>Image Gallery</h5>
+                        <h1><b>Imagining<br> a world beyond imagaination</b></h1>
+                    </div>
+
+                    <img src="circle.png" class="small-icon1">
+                    <img src="circle.png" class="small-icon2">
+                    <img src="square.png" class="small-icon3">
+                </div>
+                <div class="col">
+                    <div class="gallery-box">
+                        <img src="pic11.jpg" id="gallery">
+                        <ul>
+                            <li class="btn active">01</li>
+                            <li class="btn">02</li>
+                            <li class="btn">03</li>
+                            <li class="btn">04</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <img src="circle.png" class="small-icon4">
+            <img src="square.png" class="small-icon5">
+        </div>
+
+        <script>
+            var btn = document.getElementsByClassName("btn");
+            var gallery = document.getElementById("gallery");
+
+            var images = new Array(
+                "pic11.jpg",
+                "pi2.jpg",
+                "pi1.jpg",
+                "pi4.jpg"
+            );
+            for(let i=0; i,btn.length;i++){
+                btn[i].onclick = function(){
+                    gallery.src=images[i];
+                    let current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace("active", "");
+                    this.className += " active";
+                };
+            }
+        </script>
+    </body>
+</html>
